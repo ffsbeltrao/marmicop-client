@@ -27,7 +27,9 @@ class ViewController: UIViewController {
         }
     }
     
+    // Global
     let sounds = ["padrao", "fabeo", "zap"]
+    let marmitaDatabase = "the_marmita"
     
     // MARK: view setup
     
@@ -57,7 +59,7 @@ class ViewController: UIViewController {
     private func setupListeners() {
         let database = Firestore.firestore()
         
-        database.collection("marmitas").document("marmita_fabeo").addSnapshotListener { (documentSnapshot, error) in
+        database.collection("marmitas").document(marmitaDatabase).addSnapshotListener { (documentSnapshot, error) in
             guard let document = documentSnapshot else {
                 print("Error fetching document: \(error!)")
                 return
@@ -71,7 +73,7 @@ class ViewController: UIViewController {
     
     private func synchronizeMarmita() {
         let database = Firestore.firestore()
-        database.collection("marmitas").document("marmita_fabeo").setData(self.marmita.toAnyObject()) { (error) in
+        database.collection("marmitas").document(marmitaDatabase).setData(self.marmita.toAnyObject()) { (error) in
             if let error = error {
                 print("Error writing marmita: \(error)")
             } else {
