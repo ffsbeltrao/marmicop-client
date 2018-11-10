@@ -9,6 +9,7 @@
 import UIKit
 import CoreBluetooth
 import CoreLocation
+import Firebase
 
 class ViewController: UIViewController {
 
@@ -20,12 +21,6 @@ class ViewController: UIViewController {
     
     var marmitaIsTurnedOn: Bool = false {
         didSet {
-            if marmitaIsTurnedOn {
-                startLocalBeacon()
-            } else {
-                stopLocalBeacon()
-            }
-            
             refreshUI()
         }
     }
@@ -37,7 +32,21 @@ class ViewController: UIViewController {
         setupUI()
     }
     
-    // MARK: setup UI
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let database = Firestore.firestore()
+        
+        database.collection("marmitas").document("the_marmita").addSnapshotListener { (documentSnapshot, error) in
+            guard let document = documentSnapshot else {
+                print("Error fetching document: \(error!)")
+                return
+            }
+            print("Current data for marmita: \(String(describing: document.data()))")
+        }
+    }
+    
+    // MARK: setup
     
     private func setupUI() {
         turnOnButton.layer.masksToBounds = true
