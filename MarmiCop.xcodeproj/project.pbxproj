@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B02312521973EA5004C2A40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B02312421973EA5004C2A40 /* GoogleService-Info.plist */; };
+		3BAC6CE8219755AD00D3F266 /* Marmita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAC6CE7219755AD00D3F266 /* Marmita.swift */; };
 		3BCAA37B21970B53008CEC1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAA37A21970B53008CEC1F /* AppDelegate.swift */; };
 		3BCAA37D21970B53008CEC1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAA37C21970B53008CEC1F /* ViewController.swift */; };
 		3BCAA38021970B53008CEC1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA37E21970B53008CEC1F /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		3B02312421973EA5004C2A40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3BAC6CE7219755AD00D3F266 /* Marmita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marmita.swift; sourceTree = "<group>"; };
 		3BCAA37721970B53008CEC1F /* MarmiCop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarmiCop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCAA37A21970B53008CEC1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCAA37C21970B53008CEC1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				3BCAA37A21970B53008CEC1F /* AppDelegate.swift */,
 				3BCAA37C21970B53008CEC1F /* ViewController.swift */,
+				3BAC6CE7219755AD00D3F266 /* Marmita.swift */,
 				3BCAA37E21970B53008CEC1F /* Main.storyboard */,
 				3BCAA38421970B54008CEC1F /* Assets.xcassets */,
 				3BCAA38621970B54008CEC1F /* LaunchScreen.storyboard */,
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BAC6CE8219755AD00D3F266 /* Marmita.swift in Sources */,
 				3BCAA37D21970B53008CEC1F /* ViewController.swift in Sources */,
 				3BCAA37B21970B53008CEC1F /* AppDelegate.swift in Sources */,
 				3BCAA38321970B53008CEC1F /* MarmiCop.xcdatamodeld in Sources */,

@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     var beaconPeripheralData: NSDictionary!
     var peripheralManager: CBPeripheralManager!
     
-    var marmitaIsTurnedOn: Bool = false {
+    var marmita: Marmita! {
         didSet {
             refreshUI()
         }
@@ -29,21 +29,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupMarmita()
         setupUI()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let database = Firestore.firestore()
-        
-        database.collection("marmitas").document("the_marmita").addSnapshotListener { (documentSnapshot, error) in
-            guard let document = documentSnapshot else {
-                print("Error fetching document: \(error!)")
-                return
-            }
-            print("Current data for marmita: \(String(describing: document.data()))")
-        }
+        setupListeners()
     }
     
     // MARK: setup
@@ -54,9 +42,30 @@ class ViewController: UIViewController {
         refreshUI()
     }
     
+    private func setupListeners() {
+        let database = Firestore.firestore()
+        
+        database.collection("marmitas").document("the_marmita").addSnapshotListener { (documentSnapshot, error) in
+            guard let document = documentSnapshot else {
+                print("Error fetching document: \(error!)")
+                return
+            }
+            self.marmita = Marmita(dict: document.data())
+            print("Current data for marmita: \(self.marmita!)")
+        }
+    }
+    
+    private func setupMarmita() {
+        self.marmita = Marmita(dict: [
+            "armada": false,
+            "gemido": "",
+            "userId": ""
+            ])
+    }
+    
     private func refreshUI() {
-        turnOnButton.backgroundColor = marmitaIsTurnedOn ? UIColor.marGreen : UIColor.marRed
-        turnOnButton.setTitle(marmitaIsTurnedOn ? "DESLIGAR" : "LIGAR", for: UIControl.State.normal)
+        turnOnButton.backgroundColor = marmita.armada ? UIColor.marGreen : UIColor.marRed
+        turnOnButton.setTitle(marmita.armada ? "DESLIGAR" : "LIGAR", for: UIControl.State.normal)
     }
     
     // MARK: beacon manager
@@ -88,7 +97,16 @@ class ViewController: UIViewController {
     // MARK: actions
     
     @IBAction func didPressTurnOnButton(_ sender: UIButton) {
-        marmitaIsTurnedOn = !marmitaIsTurnedOn
+        self.marmita.armada = !self.marmita.armada
+        
+        let database = Firestore.firestore()
+        database.collection("marmitas").document("the_marmita").setData(self.marmita.toAnyObject()) { (error) in
+            if let error = error {
+                print("Error writing marmita: \(error)")
+            } else {
+                print("Marmita successfully written!")
+            }
+        }
     }
 }
 
