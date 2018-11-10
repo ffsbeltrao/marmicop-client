@@ -13,6 +13,7 @@
 		3BCAA38321970B53008CEC1F /* MarmiCop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAA38121970B53008CEC1F /* MarmiCop.xcdatamodeld */; };
 		3BCAA38521970B54008CEC1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA38421970B54008CEC1F /* Assets.xcassets */; };
 		3BCAA38821970B54008CEC1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA38621970B54008CEC1F /* LaunchScreen.storyboard */; };
+		3BCAA390219726C8008CEC1F /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAA38F219726C8008CEC1F /* UIColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3BCAA38421970B54008CEC1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BCAA38721970B54008CEC1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BCAA38921970B54008CEC1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BCAA38F219726C8008CEC1F /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				3BCAA38621970B54008CEC1F /* LaunchScreen.storyboard */,
 				3BCAA38921970B54008CEC1F /* Info.plist */,
 				3BCAA38121970B53008CEC1F /* MarmiCop.xcdatamodeld */,
+				3BCAA38F219726C8008CEC1F /* UIColorExtensions.swift */,
 			);
 			path = MarmiCop;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				3BCAA37D21970B53008CEC1F /* ViewController.swift in Sources */,
 				3BCAA37B21970B53008CEC1F /* AppDelegate.swift in Sources */,
 				3BCAA38321970B53008CEC1F /* MarmiCop.xcdatamodeld in Sources */,
+				3BCAA390219726C8008CEC1F /* UIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
