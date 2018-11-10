@@ -22,6 +22,7 @@
 /* Begin PBXFileReference section */
 		3B02312421973EA5004C2A40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BAC6CE7219755AD00D3F266 /* Marmita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marmita.swift; sourceTree = "<group>"; };
+		3BAC6CE9219773EB00D3F266 /* MarmiCop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarmiCop.entitlements; sourceTree = "<group>"; };
 		3BCAA37721970B53008CEC1F /* MarmiCop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarmiCop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCAA37A21970B53008CEC1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCAA37C21970B53008CEC1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		3BCAA37921970B53008CEC1F /* MarmiCop */ = {
 			isa = PBXGroup;
 			children = (
+				3BAC6CE9219773EB00D3F266 /* MarmiCop.entitlements */,
 				3BCAA37A21970B53008CEC1F /* AppDelegate.swift */,
 				3BCAA37C21970B53008CEC1F /* ViewController.swift */,
 				3BAC6CE7219755AD00D3F266 /* Marmita.swift */,
@@ -134,6 +136,11 @@
 				TargetAttributes = {
 					3BCAA37621970B53008CEC1F = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -390,6 +397,7 @@
 			baseConfigurationReference = 85758D152F2ABB24BFDEF91A /* Pods-MarmiCop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MarmiCop/MarmiCop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5EUEY3M354;
 				INFOPLIST_FILE = MarmiCop/Info.plist;
@@ -410,6 +418,7 @@
 			baseConfigurationReference = 939CE56A39EECF34937CD6C7 /* Pods-MarmiCop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MarmiCop/MarmiCop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5EUEY3M354;
 				INFOPLIST_FILE = MarmiCop/Info.plist;

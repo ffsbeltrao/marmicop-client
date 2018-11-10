@@ -8,4 +8,5 @@ target 'MarmiCop' do
   # Pods for MarmiCop
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Messaging'
 end
