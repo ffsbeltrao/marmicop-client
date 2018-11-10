@@ -49,6 +49,9 @@
                                     <segment title="ZAP"/>
                                 </segments>
                                 <color key="tintColor" red="0.84313725490000002" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="didChangeSoundSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="yXp-eB-Yiv"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Som do Alarme:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8v-Ja-YQy">
                                 <rect key="frame" x="40" y="458.5" width="295" height="27.5"/>
@@ -76,6 +79,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="soundSegmentedControl" destination="69b-0A-eDo" id="up0-Uv-p3g"/>
                         <outlet property="turnOnButton" destination="E1C-nt-NdU" id="hSH-h2-OKz"/>
                     </connections>
                 </viewController>

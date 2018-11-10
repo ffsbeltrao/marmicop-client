@@ -14,6 +14,7 @@ import Firebase
 class ViewController: UIViewController {
 
     @IBOutlet weak var turnOnButton: UIButton!
+    @IBOutlet weak var soundSegmentedControl: UISegmentedControl!
     
     var localBeacon: CLBeaconRegion!
     var beaconPeripheralData: NSDictionary!
@@ -24,6 +25,8 @@ class ViewController: UIViewController {
             refreshUI()
         }
     }
+    
+    let sounds = ["padrao", "fabeo", "zap"]
     
     // MARK: view setup
     
@@ -42,6 +45,14 @@ class ViewController: UIViewController {
         refreshUI()
     }
     
+    private func setupMarmita() {
+        self.marmita = Marmita(dict: [
+            "armada": false,
+            "gemido": "",
+            "userId": ""
+            ])
+    }
+    
     private func setupListeners() {
         let database = Firestore.firestore()
         
@@ -55,24 +66,9 @@ class ViewController: UIViewController {
         }
     }
     
-    private func setupMarmita() {
-        self.marmita = Marmita(dict: [
-            "armada": false,
-            "gemido": "",
-            "userId": ""
-            ])
-    }
+    // MARK: database
     
-    private func refreshUI() {
-        turnOnButton.backgroundColor = marmita.armada ? UIColor.marGreen : UIColor.marGray
-        turnOnButton.setTitle(marmita.armada ? "DESARMAR" : "ARMAR", for: UIControl.State.normal)
-    }
-    
-    // MARK: actions
-    
-    @IBAction func didPressTurnOnButton(_ sender: UIButton) {
-        self.marmita.armada = !self.marmita.armada
-        
+    private func synchronizeMarmita() {
         let database = Firestore.firestore()
         database.collection("marmitas").document("the_marmita").setData(self.marmita.toAnyObject()) { (error) in
             if let error = error {
@@ -81,5 +77,25 @@ class ViewController: UIViewController {
                 print("Marmita successfully written!")
             }
         }
+    }
+    
+    // MARK: helpers
+    
+    private func refreshUI() {
+        turnOnButton.backgroundColor = marmita.armada ? UIColor.marGreen : UIColor.marGray
+        turnOnButton.setTitle(marmita.armada ? "DESARMAR" : "ARMAR", for: UIControl.State.normal)
+        soundSegmentedControl.selectedSegmentIndex = sounds.index(of: marmita.gemido) ?? 0
+    }
+    
+    // MARK: actions
+    
+    @IBAction func didPressTurnOnButton(_ sender: UIButton) {
+        self.marmita.armada = !self.marmita.armada
+        synchronizeMarmita()
+    }
+
+    @IBAction func didChangeSoundSegmentedControl(_ sender: UISegmentedControl) {
+        self.marmita.gemido = sounds[sender.selectedSegmentIndex]
+        synchronizeMarmita()
     }
 }
