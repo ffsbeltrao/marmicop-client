@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B02312521973EA5004C2A40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B02312421973EA5004C2A40 /* GoogleService-Info.plist */; };
 		3BCAA37B21970B53008CEC1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAA37A21970B53008CEC1F /* AppDelegate.swift */; };
 		3BCAA37D21970B53008CEC1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAA37C21970B53008CEC1F /* ViewController.swift */; };
 		3BCAA38021970B53008CEC1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA37E21970B53008CEC1F /* Main.storyboard */; };
@@ -14,9 +15,11 @@
 		3BCAA38521970B54008CEC1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA38421970B54008CEC1F /* Assets.xcassets */; };
 		3BCAA38821970B54008CEC1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCAA38621970B54008CEC1F /* LaunchScreen.storyboard */; };
 		3BCAA390219726C8008CEC1F /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAA38F219726C8008CEC1F /* UIColorExtensions.swift */; };
+		753A5D29A7D2E2987294132D /* Pods_MarmiCop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F2ED637E8A819A168B69AE /* Pods_MarmiCop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B02312421973EA5004C2A40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BCAA37721970B53008CEC1F /* MarmiCop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarmiCop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCAA37A21970B53008CEC1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BCAA37C21970B53008CEC1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +29,9 @@
 		3BCAA38721970B54008CEC1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BCAA38921970B54008CEC1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BCAA38F219726C8008CEC1F /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		85758D152F2ABB24BFDEF91A /* Pods-MarmiCop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarmiCop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarmiCop/Pods-MarmiCop.debug.xcconfig"; sourceTree = "<group>"; };
+		939CE56A39EECF34937CD6C7 /* Pods-MarmiCop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarmiCop.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarmiCop/Pods-MarmiCop.release.xcconfig"; sourceTree = "<group>"; };
+		D6F2ED637E8A819A168B69AE /* Pods_MarmiCop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarmiCop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753A5D29A7D2E2987294132D /* Pods_MarmiCop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E69C6323DBE1D7E77E9731F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85758D152F2ABB24BFDEF91A /* Pods-MarmiCop.debug.xcconfig */,
+				939CE56A39EECF34937CD6C7 /* Pods-MarmiCop.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3BCAA36E21970B53008CEC1F = {
 			isa = PBXGroup;
 			children = (
 				3BCAA37921970B53008CEC1F /* MarmiCop */,
 				3BCAA37821970B53008CEC1F /* Products */,
+				2E69C6323DBE1D7E77E9731F /* Pods */,
+				EB045B14E5B2E0D987C7279B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +84,17 @@
 				3BCAA38921970B54008CEC1F /* Info.plist */,
 				3BCAA38121970B53008CEC1F /* MarmiCop.xcdatamodeld */,
 				3BCAA38F219726C8008CEC1F /* UIColorExtensions.swift */,
+				3B02312421973EA5004C2A40 /* GoogleService-Info.plist */,
 			);
 			path = MarmiCop;
+			sourceTree = "<group>";
+		};
+		EB045B14E5B2E0D987C7279B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6F2ED637E8A819A168B69AE /* Pods_MarmiCop.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3BCAA38C21970B54008CEC1F /* Build configuration list for PBXNativeTarget "MarmiCop" */;
 			buildPhases = (
+				67940EA40E356B4BB3B5D3D9 /* [CP] Check Pods Manifest.lock */,
 				3BCAA37321970B53008CEC1F /* Sources */,
 				3BCAA37421970B53008CEC1F /* Frameworks */,
 				3BCAA37521970B53008CEC1F /* Resources */,
+				7B80BFF453E02D69984F815C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,12 +158,62 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BCAA38821970B54008CEC1F /* LaunchScreen.storyboard in Resources */,
+				3B02312521973EA5004C2A40 /* GoogleService-Info.plist in Resources */,
 				3BCAA38521970B54008CEC1F /* Assets.xcassets in Resources */,
 				3BCAA38021970B53008CEC1F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		67940EA40E356B4BB3B5D3D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarmiCop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B80BFF453E02D69984F815C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MarmiCop/Pods-MarmiCop-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarmiCop/Pods-MarmiCop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3BCAA37321970B53008CEC1F /* Sources */ = {
@@ -288,6 +367,7 @@
 		};
 		3BCAA38D21970B54008CEC1F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85758D152F2ABB24BFDEF91A /* Pods-MarmiCop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -307,6 +387,7 @@
 		};
 		3BCAA38E21970B54008CEC1F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 939CE56A39EECF34937CD6C7 /* Pods-MarmiCop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
