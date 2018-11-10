@@ -30,15 +30,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMarmita()
-        setupUI()
         setupListeners()
+        setupUI()
     }
     
     // MARK: setup
     
     private func setupUI() {
         turnOnButton.layer.masksToBounds = true
-        turnOnButton.layer.cornerRadius = 50
+        turnOnButton.layer.cornerRadius = turnOnButton.frame.height/2
         refreshUI()
     }
     
@@ -64,34 +64,8 @@ class ViewController: UIViewController {
     }
     
     private func refreshUI() {
-        turnOnButton.backgroundColor = marmita.armada ? UIColor.marGreen : UIColor.marRed
-        turnOnButton.setTitle(marmita.armada ? "DESLIGAR" : "LIGAR", for: UIControl.State.normal)
-    }
-    
-    // MARK: beacon manager
-
-    func startLocalBeacon() {
-
-        if localBeacon != nil {
-            stopLocalBeacon()
-        }
-        
-        let localBeaconUUID = "00000000-0000-0000-0000-000000000000"
-        let localBeaconMajor: CLBeaconMajorValue = 1
-        let localBeaconMinor: CLBeaconMinorValue = 292
-        
-        let uuid = UUID(uuidString: localBeaconUUID)!
-        localBeacon = CLBeaconRegion(proximityUUID: uuid, major: localBeaconMajor, minor: localBeaconMinor, identifier: "MarmiCop")
-        
-        beaconPeripheralData = localBeacon.peripheralData(withMeasuredPower: nil)
-        peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: nil)
-    }
-    
-    func stopLocalBeacon() {
-        peripheralManager.stopAdvertising()
-        peripheralManager = nil
-        beaconPeripheralData = nil
-        localBeacon = nil
+        turnOnButton.backgroundColor = marmita.armada ? UIColor.marGreen : UIColor.marGray
+        turnOnButton.setTitle(marmita.armada ? "DESARMAR" : "ARMAR", for: UIControl.State.normal)
     }
     
     // MARK: actions
@@ -109,14 +83,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
-extension ViewController: CBPeripheralManagerDelegate {
-    func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
-        if peripheral.state == .poweredOn {
-            peripheralManager.startAdvertising(beaconPeripheralData as! [String : Any]!)
-        } else if peripheral.state == .poweredOff {
-            peripheralManager.stopAdvertising()
-        }
-    }
-}
-
