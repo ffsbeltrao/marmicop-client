@@ -15,6 +15,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var turnOnSwitch: UISwitch!
     @IBOutlet weak var soundSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var alertContainer: UIView!
     
     var localBeacon: CLBeaconRegion!
     var beaconPeripheralData: NSDictionary!
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         setupMarmita()
         setupListeners()
         setupUI()
+        animateAlert(true)
     }
     
     // MARK: setup
@@ -55,7 +57,7 @@ class ViewController: UIViewController {
     private func setupListeners() {
         let database = Firestore.firestore()
         
-        database.collection("marmitas").document("the_marmita").addSnapshotListener { (documentSnapshot, error) in
+        database.collection("marmitas").document("marmita_fabeo").addSnapshotListener { (documentSnapshot, error) in
             guard let document = documentSnapshot else {
                 print("Error fetching document: \(error!)")
                 return
@@ -69,7 +71,7 @@ class ViewController: UIViewController {
     
     private func synchronizeMarmita() {
         let database = Firestore.firestore()
-        database.collection("marmitas").document("the_marmita").setData(self.marmita.toAnyObject()) { (error) in
+        database.collection("marmitas").document("marmita_fabeo").setData(self.marmita.toAnyObject()) { (error) in
             if let error = error {
                 print("Error writing marmita: \(error)")
             } else {
@@ -83,6 +85,22 @@ class ViewController: UIViewController {
     private func refreshUI() {
         turnOnSwitch.setOn(marmita.armada, animated: true)
         soundSegmentedControl.selectedSegmentIndex = sounds.index(of: marmita.gemido) ?? 0
+        animateAlert(marmita.gemendo)
+    }
+    
+    private func animateAlert(_ animates: Bool) {
+        if animates {
+            if alertContainer.isHidden {
+                alertContainer.isHidden = false
+                alertContainer.alpha = 0
+                UIView.animate(withDuration: 0.4, delay: 0, options: [.repeat, .autoreverse], animations: {
+                    self.alertContainer.alpha = 1
+                })
+            }
+        } else {
+            alertContainer.isHidden = true
+            alertContainer.layer.removeAllAnimations()
+        }
     }
     
     // MARK: actions
