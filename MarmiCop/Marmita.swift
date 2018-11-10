@@ -13,27 +13,27 @@ struct Marmita {
 
     var armada: Bool = false
     var gemido: String = ""
-    var userId: String = ""
+    var gemendo: Bool = false
     
     init?(dict: [String: Any]?) {
         guard
             let dict = dict,
             let armada = dict["armada"] as? Bool,
             let gemido = dict["gemido"] as? String,
-            let userId = dict["userId"] as? String else {
+            let gemendo = dict["gemendo"] as? Bool else {
                 return nil
         }
         
         self.armada = armada
         self.gemido = gemido
-        self.userId = userId
+        self.gemendo = gemendo
     }
     
     func toAnyObject() -> [String: Any] {
         return [
             "armada": armada,
             "gemido": gemido,
-            "userId": userId
+            "gemendo": gemendo
         ]
     }
 }

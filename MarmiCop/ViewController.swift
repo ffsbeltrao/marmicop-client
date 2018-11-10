@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         self.marmita = Marmita(dict: [
             "armada": false,
             "gemido": "",
-            "userId": ""
+            "gemendo": false
             ])
     }
     
