@@ -13,7 +13,7 @@ import Firebase
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var turnOnButton: UIButton!
+    @IBOutlet weak var turnOnSwitch: UISwitch!
     @IBOutlet weak var soundSegmentedControl: UISegmentedControl!
     
     var localBeacon: CLBeaconRegion!
@@ -40,8 +40,7 @@ class ViewController: UIViewController {
     // MARK: setup
     
     private func setupUI() {
-        turnOnButton.layer.masksToBounds = true
-        turnOnButton.layer.cornerRadius = turnOnButton.frame.height/2
+        turnOnSwitch.transform = CGAffineTransform(scaleX: 5, y: 5)
         refreshUI()
     }
     
@@ -82,18 +81,17 @@ class ViewController: UIViewController {
     // MARK: helpers
     
     private func refreshUI() {
-        turnOnButton.backgroundColor = marmita.armada ? UIColor.marGreen : UIColor.marGray
-        turnOnButton.setTitle(marmita.armada ? "DESARMAR" : "ARMAR", for: UIControl.State.normal)
+        turnOnSwitch.setOn(marmita.armada, animated: true)
         soundSegmentedControl.selectedSegmentIndex = sounds.index(of: marmita.gemido) ?? 0
     }
     
     // MARK: actions
     
-    @IBAction func didPressTurnOnButton(_ sender: UIButton) {
-        self.marmita.armada = !self.marmita.armada
+    @IBAction func didChangeTurnOnSwitch(_ sender: UISwitch) {
+        self.marmita.armada = sender.isOn
         synchronizeMarmita()
     }
-
+    
     @IBAction func didChangeSoundSegmentedControl(_ sender: UISegmentedControl) {
         self.marmita.gemido = sounds[sender.selectedSegmentIndex]
         synchronizeMarmita()

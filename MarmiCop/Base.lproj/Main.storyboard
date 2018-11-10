@@ -18,28 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1C-nt-NdU">
-                                <rect key="frame" x="37.5" y="258.5" width="300" height="150"/>
-                                <color key="backgroundColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="AXk-LS-hPx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <state key="normal" title="ARMAR">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressTurnOnButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NuG-RD-Sdh"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MarmiCOP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="odR-2h-cCz">
-                                <rect key="frame" x="0.0" y="141" width="375" height="67.5"/>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="60"/>
-                                <color key="textColor" red="0.84313725490000002" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="69b-0A-eDo">
-                                <rect key="frame" x="40" y="496" width="295" height="51"/>
+                                <rect key="frame" x="40" y="517" width="295" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="CTl-kA-e54"/>
                                 </constraints>
@@ -48,39 +28,49 @@
                                     <segment title="Fabeo"/>
                                     <segment title="ZAP"/>
                                 </segments>
-                                <color key="tintColor" red="0.84313725490000002" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.00877165515" green="0.43893134589999999" blue="0.75310057399999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="didChangeSoundSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="yXp-eB-Yiv"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Som do Alarme:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8v-Ja-YQy">
-                                <rect key="frame" x="40" y="458.5" width="295" height="27.5"/>
+                                <rect key="frame" x="40" y="479.5" width="295" height="27.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <color key="textColor" red="0.84313725490000002" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0087716551497578621" green="0.43893134593963623" blue="0.75310057401657104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="x40-8Z-cRg">
+                                <rect key="frame" x="75" y="120" width="225" height="81"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="20y-vM-qqS">
+                                <rect key="frame" x="163" y="318" width="51" height="31"/>
+                                <color key="tintColor" red="0.00877165515" green="0.43893134589999999" blue="0.75310057399999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="onTintColor" red="0.00877165515" green="0.43893134589999999" blue="0.75310057399999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="didChangeTurnOnSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="rgk-5e-U3v"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="E1C-nt-NdU" firstAttribute="top" secondItem="odR-2h-cCz" secondAttribute="bottom" constant="50" id="08U-n1-nSO"/>
-                            <constraint firstItem="l8v-Ja-YQy" firstAttribute="top" secondItem="E1C-nt-NdU" secondAttribute="bottom" constant="50" id="Akt-7A-d9u"/>
                             <constraint firstItem="69b-0A-eDo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="AqM-nZ-AWA"/>
-                            <constraint firstItem="odR-2h-cCz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GuH-so-aCY"/>
+                            <constraint firstItem="x40-8Z-cRg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="C5R-OR-Dm4"/>
                             <constraint firstItem="69b-0A-eDo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IVz-T4-sBt"/>
-                            <constraint firstItem="E1C-nt-NdU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="Rd9-7f-c7U"/>
-                            <constraint firstItem="E1C-nt-NdU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XxS-B4-4vV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="69b-0A-eDo" secondAttribute="bottom" constant="100" id="Mz8-Wn-Z3E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l8v-Ja-YQy" secondAttribute="trailing" constant="40" id="YSj-u1-xLx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="odR-2h-cCz" secondAttribute="trailing" id="alr-BO-CZO"/>
+                            <constraint firstItem="20y-vM-qqS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZXs-Yl-1dg"/>
+                            <constraint firstItem="20y-vM-qqS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c2w-LN-lz8"/>
                             <constraint firstItem="69b-0A-eDo" firstAttribute="top" secondItem="l8v-Ja-YQy" secondAttribute="bottom" constant="10" id="ebz-cm-l3i"/>
-                            <constraint firstItem="E1C-nt-NdU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="je4-jA-RN2"/>
+                            <constraint firstItem="x40-8Z-cRg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jpd-a9-cAH"/>
                             <constraint firstItem="l8v-Ja-YQy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="jqA-uG-4hJ"/>
+                            <constraint firstItem="x40-8Z-cRg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="omm-VT-7O3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="69b-0A-eDo" secondAttribute="trailing" constant="40" id="v7V-lY-IwQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="soundSegmentedControl" destination="69b-0A-eDo" id="up0-Uv-p3g"/>
-                        <outlet property="turnOnButton" destination="E1C-nt-NdU" id="hSH-h2-OKz"/>
+                        <outlet property="turnOnSwitch" destination="20y-vM-qqS" id="Ats-jg-41Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,4 +78,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="387" height="81"/>
+    </resources>
 </document>
